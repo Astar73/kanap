@@ -19,9 +19,9 @@ let api = fetch (`http://localhost:3000/api/products/${kanapId}`)
         console.log (kanapData);
         //Créer une balise Img
         let productImg = document.createElement ("img");
-        //Récupération de la source de l'image
+        // La source de "productImg" correspond à "imageUrl" de l'API
         productImg.src = kanapData.imageUrl;
-        //Récupération du texte alternatif de l'image
+        // Le texte alternatif de "productImg" correspond au "altTxt" de l'API
         productImg.alt = kanapData.altTxt;
         //Association de l'enfant à un parent
         document.getElementsByClassName ("item__img")[0].appendChild (productImg);

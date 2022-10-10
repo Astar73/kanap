@@ -19,41 +19,41 @@ fetch ("http://localhost:3000/api/products")
 
             // Création de la balise "a"
             let productLinkA = document.createElement("a");
-            // items à pour enfant productLinkA
+            // "items" à pour enfant "productLinkA"
             document.getElementById("items").appendChild(productLinkA);
-            // Référence du lien productLinkA sur l'API
+            // Référence du lien "productLinkA" en fonction de l'id de article
             productLinkA.href = `product.html?id=${article._id}`;
 
             // Création de la balise "article"
             let productArticle = document.createElement("article");
-            // productLinkA à pour enfant productArticle
+            // "productLinkA" à pour enfant "productArticle"   
             productLinkA.appendChild(productArticle);
 
-            // Création de la balise Img
+            // Création de la balise "img"
             let productImg = document.createElement("img");
-            // productArticle à pour enfant productImg
+            // "productArticle" à pour enfant "productImg"
             productArticle.appendChild(productImg);
-            // Référence du lien productImg sur l'API
+            // La source de "productImg" correspond à "imageUrl" de l'article
             productImg.src = article.imageUrl;
-            // Référence du lien productImg sur l'API
+            // Le texte alternatif de "productImg" correspond au "altTxt" de l'article
             productImg.alt = article.altTxt;
 
             // Création de la balise "h3"
             let productName = document.createElement("h3");
-            // productArticle à pour enfant productName
+            // "productArticle" à pour enfant "productName"
             productArticle.appendChild(productName);
-            // Ajout d'une class productName à la balise "h3"
+            // Ajout d'une class "productName" à la balise "h3"
             productName.classList.add("productName");
-            // Référence du lien productName sur l'API
+            // "productName" à pour texte le "name" de l'article
             productName.innerHTML = article.name;
 
             // Création de la balise "p"
             let productDescription = document.createElement("p");
-            // productArticle à pour enfant productDescription
+            // "productArticle" à pour enfant "productDescription"
             productArticle.appendChild(productDescription);
-            // Ajout d'une classe productDescription à la balise "p"
+            // Ajout d'une classe "productDescription" à la balise "p"
             productDescription.classList.add("productDescription");
-            // Référence du lien productLink sur l'API
+            // "productDescription" à pour texte la "description" de l'article
             productDescription.innerHTML = article.description;
         }
     })
