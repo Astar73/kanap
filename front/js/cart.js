@@ -310,69 +310,6 @@ function form() {
 form();
 
 
-/*
-// Envoyer le formulaire
-function sendForm() {
-    // Récupère le panier
-    let cart = JSON.parse(localStorage.getItem("cart"));
-    // Selectionne le bouton Commander
-    const submitOrder = document.getElementById("order");
-    // Ajoute un eventListener sur le bouton Commander
-    submitOrder.addEventListener("click", function(event) {
-        event.preventDefault();
-        // Création d'un tableau dans le local storage
-        let products = [];
-        for (let i = 0; i < cart.length; i++ ) {
-            let sendProducts = {
-                colors: [cart[i].productColor],
-                id: cart[i].productId,
-                name: cart[i].productName,
-                price: cart[i].productPrice,
-                imageUrl: cart[i].productImg,
-                description: cart[i].productDescription,
-                altTxt: cart[i].productImgAlt
-            }
-            products.push(sendProducts);            
-        }
-        console.log(products);
-        
-        fetch("http://localhost:3000/api/products/order", {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json', 
-                "Content-Type": "application/json" 
-            },
-            body: JSON.stringify( {
-                contact : {
-                    // Selectionne les différents inputs
-                    firstName : document.getElementById('firstName').value,
-                    lastName : document.getElementById('lastName').value,
-                    address : document.getElementById('address').value,
-                    city : document.getElementById('city').value,
-                    email : document.getElementById('email').value
-                },
-                products: products,
-            })
-        })
-        .then (function(response) {
-            console.log(response);
-            return response.json()
-        })
-        .then (function(data) {
-            console.log(data);
-            localStorage.setItem("orderId", data.orderId);
-            window.location.href = `confirmation.html?id=${data.orderId}`;
-        })
-        // Message en cas d'erreur de fetch
-        .catch((error) => {
-            console.log(error);
-            //alert ("Problème lors du fetch : " + error.message);            
-        });
-    })
-}
-sendForm();
-*/
-
 
 // Envoyer le formulaire
 function sendForm() {
